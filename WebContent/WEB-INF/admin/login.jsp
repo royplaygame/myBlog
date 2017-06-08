@@ -75,7 +75,7 @@
 										<div class="space-6"></div>
 
 										<form
-											action="${pageContext.request.contextPath }/userInfo/toLogin"
+											action="${pageContext.request.contextPath }/console/toConsoleList"
 											method="post">
 											<fieldset>
 												<label class="block clearfix"> <span

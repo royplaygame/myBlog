@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
@@ -26,15 +25,15 @@
 		<!-- #sidebar-shortcuts -->
 
 		<ul id="navlist" class="nav nav-list">
-			<li class="active"><a href="console.jsp"> <i
+			<li class="active"><a href="${pageContext.request.contextPath}/console/toConsoleList"> <i
 					class="icon-dashboard"></i> <span class="menu-text"> 控制台 </span>
 			</a></li>
 
-			<li><a href="article.jsp"> <i class="icon-user"></i> <span
+			<li><a href="${pageContext.request.contextPath}/article/toArticleList"> <i class="icon-user"></i> <span
 					class="menu-text"> 文章管理</span>
 			</a></li>
 
-			<li><a href="users.jsp"> <i class="icon-desktop"></i> <span
+			<li><a href="${pageContext.request.contextPath}/user/toUserList"> <i class="icon-desktop"></i> <span
 					class="menu-text"> 账号管理 </span>
 			</a></li>
 		</ul>
