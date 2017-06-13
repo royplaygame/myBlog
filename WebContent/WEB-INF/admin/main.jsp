@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="utf-8" />
-<title>控制台-微商后台管理系统</title>
+<title>控制台-微博后台管理系统</title>
 <!-- 统一添加表单验证提示颜色 -->
 <style type="text/css">
 .error {

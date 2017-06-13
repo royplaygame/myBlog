@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 
 
@@ -28,14 +30,13 @@ public class Article {
 	private String picPath;
 	@Column(name="content")
 	private String content;
+	@Temporal(TemporalType.DATE)
 	@Column(name="publish_time")
 	private Date publishTime;
 	@Column(name="author")
 	private String author;
-	@ManyToOne(targetEntity = ArticleType.class, fetch = FetchType.EAGER)
-	@JoinColumn(name="article_type",referencedColumnName="id")
-	//@Transient
-	private ArticleType articleType;
+	@Column(name="type")
+	private int type;
 	public Integer getId() {
 		return id;
 	}
@@ -72,12 +73,13 @@ public class Article {
 	public void setAuthor(String author) {
 		this.author = author;
 	}
-	public ArticleType getArticleType() {
-		return articleType;
+	public int getType() {
+		return type;
 	}
-	public void setArticleType(ArticleType articleType) {
-		this.articleType = articleType;
+	public void setType(int type) {
+		this.type = type;
 	}
+	
 	
 
 }

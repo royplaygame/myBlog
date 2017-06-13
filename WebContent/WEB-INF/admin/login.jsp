@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>登录页面-微商后台管理系统</title>
+<title>登录页面-微博后台管理系统</title>
 <meta name="keywords"
 	content="Bootstrap模版,Bootstrap模版下载,Bootstrap教程,Bootstrap中文" />
 <meta name="description"
@@ -57,7 +57,7 @@
 						<div style="height: 110px;"></div>
 						<div class="center">
 							<h1>
-								<i class="icon-desktop green"></i> <span class="red">微商</span> <span
+								<i class="icon-desktop green"></i> <span class="red">微博</span> <span
 									class="white">后台管理系统</span>
 							</h1>
 							<h4 class="blue">&copy; 三月国际</h4>

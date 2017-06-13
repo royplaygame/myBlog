@@ -24,8 +24,58 @@ public class ArticleDaoImpl implements ArticleDao {
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Article> findArticleByType(int typeId) {
-		Query query =this.getSession().createQuery("from Article a where a.articleType.id=?");
-		query.setParameter(1, typeId);
+		Query query =this.getSession().createQuery("from Article a where a.type=?");
+		query.setParameter(0, typeId);
+		return query.list();
+	}
+
+	@Override
+	public boolean addArticle(Article article) {
+		try{
+			this.getSession().save(article);
+			return true;
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+	@Override
+	public boolean updateArticle(Article article) {
+		try{
+			this.getSession().saveOrUpdate(article);
+			return true;
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+	@Override
+	public boolean deleteArticle(Integer id) {
+		try{
+			Article article=(Article) this.getSession().get(Article.class, id);
+			this.getSession().delete(article);
+			return true;
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Article> findAllArticleList() {
+		Query query=this.getSession().createQuery("from Article");
+		return query.list();
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Article> findArticleListByPage(int curentPage, int size) {
+		Query query=this.getSession().createQuery("from Article");
+		query.setFirstResult((curentPage-1)*size);
+		query.setMaxResults(size);
 		return query.list();
 	}
 

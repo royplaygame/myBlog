@@ -22,6 +22,9 @@
 	<mvc:resources location="/upload/" mapping="/upload/**"></mvc:resources>
 	<mvc:resources location="/front/" mapping="/front/**"></mvc:resources>
 	<mvc:resources location="/layer/" mapping="/layer/**"></mvc:resources>
+	<mvc:resources location="/video/" mapping="/video/**"></mvc:resources>
+	<mvc:resources location="/wuziqi/" mapping="/wuziqi/**"></mvc:resources>
+	<mvc:resources location="/wz/" mapping="/wz/**"></mvc:resources>
 
 
 	<!-- 内置资源解析器 -->

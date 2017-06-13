@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="utf-8" />
-<title>控制台-微商后台管理系统</title>
+<title>控制台-微博后台管理系统</title>
 <!-- 统一添加表单验证提示颜色 -->
 <style type="text/css">
 .error {
@@ -386,17 +386,16 @@
 			$("#grid-table")
 					.jqGrid(
 							{
-								url : "#",
+								url : "${pageContext.request.contextPath}/user/findUserList",
 								//data : mydata,
 								datatype : "json",
 								height : '340',//表格高度
 								mtype : 'POST',
-								colNames : [ "用户编号", '用户帐号', '手机', '地址',
-										'用户等级', '角色' ],
+								colNames : [ "用户编号", '用户帐号','密码', '角色' ],
 								colModel : [
 										{
-											name : 'userId',
-											index : 'userId',
+											name : 'id',
+											index : 'id',
 											align : "center",
 											editable : false,
 											key : true/*pk*/,
@@ -406,41 +405,13 @@
 											index : 'userName',
 											align : "center",
 											editable : true
-										},
+										},	
 										{
-											name : 'mobile',
-											index : 'mobile',
+											name : 'passWord',
+											index : 'userName',
 											align : "center",
 											editable : true
-										},
-										{
-											name : 'address',
-											index : 'address',
-											align : "center",
-											editable : true
-										},
-										{
-											name : 'userLevel',
-											index : 'userLevel',
-											align : "center",
-											editable : true,
-											formatter : function(cell, option,
-													obj) {
-												if (cell == 0) {
-													return '<span class="label label-success label-xlg  arrowed-in-right arrowed">零售</span>';
-												} else if (cell == 1) {
-													return '<span class="label label-success label-xlg  arrowed-in-right arrowed">营销</span>';
-												} else if (cell == 2) {
-													return '<span class="label label-success label-xlg  arrowed-in-right arrowed">市代</span>';
-												} else if (cell == 3) {
-													return '<span class="label label-success label-xlg  arrowed-in-right arrowed">省代</span>';
-												} else if (cell == 4) {
-													return '<span class="label label-success label-xlg  arrowed-in-right arrowed">总代</span>';
-												} else {
-													return '<span class="label label-success label-xlg  arrowed-in-right arrowed">大区</span>';
-												}
-											}
-										},
+										},	
 										{
 											name : 'role',
 											index : 'role',

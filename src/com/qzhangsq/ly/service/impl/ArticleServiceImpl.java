@@ -20,4 +20,29 @@ public class ArticleServiceImpl implements ArticleService {
 		return articleDao.findArticleByType(typeId);
 	}
 
+	@Override
+	public boolean addArticle(Article article) {
+		return articleDao.addArticle(article);
+	}
+
+	@Override
+	public boolean updateArticle(Article article) {
+		return articleDao.updateArticle(article);
+	}
+
+	@Override
+	public boolean deleteArticle(Integer id) {
+		return articleDao.deleteArticle(id);
+	}
+
+	@Override
+	public List<Article> findAllArticleList() {
+		return articleDao.findAllArticleList();
+	}
+
+	@Override
+	public List<Article> findArticleListByPage(int curentPage, int size) {
+		return articleDao.findArticleListByPage(curentPage, size);
+	}
+
 }
